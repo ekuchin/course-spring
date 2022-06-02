@@ -1,6 +1,5 @@
-package ru.projectosnova.springlearnaop;
+package org.example;
 
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 @Service

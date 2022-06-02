@@ -1,4 +1,4 @@
-package ru.projectosnova.springlearnaop;
+package org.example;
 
 import org.aopalliance.intercept.MethodInvocation;
 import org.aspectj.lang.JoinPoint;
@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
 @Component
 public class CatAspect {
 
-    @Pointcut("execution(* ru.projectosnova.springlearnaop.Cat.*(..))")
+    @Pointcut("execution(* org.example.Cat.*(..))")
     public void allCatMethods() { }
 
     @Before("allCatMethods()")
@@ -30,17 +30,17 @@ public class CatAspect {
         System.out.println("after " + jp.toString());
     }
 
-    @Before("execution(* ru.projectosnova.springlearnaop.Cat.sleep(..))")
+    @Before("execution(* org.example.Cat.sleep(..))")
     public void beforeSleep(JoinPoint jp) {
         System.out.println("Спаааать!!! " + jp.toString());
     }
 
-    @Before("@annotation(ru.projectosnova.springlearnaop.SayMeow)")
+    @Before("@annotation(org.example.SayMeow)")
     public void beforeSayMeowAnnotationAdvice(){
         System.out.println("Мяу ! А потом ... ");
     }
 
-  @After("@annotation(ru.projectosnova.springlearnaop.SayMeow)")
+  @After("@annotation(org.example.SayMeow)")
     public void afterSayMeowAnnotationAdvice(JoinPoint jp){
         System.out.println("... А теперь - Мяу ! ");
     }

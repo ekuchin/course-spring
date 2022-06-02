@@ -1,4 +1,4 @@
-package ru.projectosnova.ru.springlearndatajdbc;
+package org.example;
 
 public class Cat {
 

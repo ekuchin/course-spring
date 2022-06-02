@@ -1,4 +1,4 @@
-package ru.projectosnova.ru.springlearnmvc;
+package org.example;
 
 public class Cat {
 
