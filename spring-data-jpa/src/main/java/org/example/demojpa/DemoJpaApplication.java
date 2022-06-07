@@ -32,6 +32,13 @@ public class DemoJpaApplication implements CommandLineRunner {
 		System.out.println("Коты");
 		repoCat.findAll().forEach(System.out::println);
 
+		System.out.println("Манулы:");
+		repoCat.findByBreed("Манул").forEach(System.out::println);
+
+		System.out.println("Снова Манулы:");
+		repoCat.findSomeManuls().forEach(System.out::println);
+
+
 		Cat dbCat = repoCat.findById(1L).orElseThrow();
 
 		dbCat.setName("Барсик");
