@@ -28,7 +28,7 @@ public class Cat {
         @JoinColumn(name="parent_id")
     */
     //Bi-directional
-    @OneToMany (fetch=FetchType.LAZY, cascade=CascadeType.ALL, mappedBy = "parent")
+    @OneToMany (mappedBy = "parent", fetch = FetchType.EAGER)
     private List<Kitten> children;
 
      public Cat() {
@@ -40,6 +40,7 @@ public class Cat {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", breed='" + breed + '\'' +
+                ", children='" + children + '\'' +
                 '}';
     }
 

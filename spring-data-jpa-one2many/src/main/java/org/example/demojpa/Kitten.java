@@ -10,7 +10,7 @@ public class Kitten {
     private Long id;
     private String name;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name="parent_id")
     private Cat parent;
 
@@ -19,7 +19,7 @@ public class Kitten {
         return "Kitten{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", parent=" + parent +
+             //   ", parent=" + parent +
                 '}';
     }
 

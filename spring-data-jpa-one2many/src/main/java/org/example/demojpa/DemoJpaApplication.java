@@ -28,17 +28,20 @@ public class DemoJpaApplication implements CommandLineRunner {
 		Cat sphynx = new Cat ("Рамзес", "Сфинкс");
 		Cat brit = new Cat ("Эдуард", "Британец");
 
-		Kitten first = new Kitten("Первый");
-		Kitten second = new Kitten("Второй");
-		first.setParent(manul);
-		second.setParent(manul);
-		manul.setChildren(Arrays.asList(first,second));
-
-		repoKitten.save(first);
-		repoKitten.save(second);
-
+		repoCat.save(manul);
 		repoCat.save(sphynx);
 		repoCat.save(brit);
+
+		Kitten first = new Kitten("Первый");
+		Kitten second = new Kitten("Второй");
+
+		first.setParent(manul);
+		repoKitten.save(first);
+
+		second.setParent(manul);
+		repoKitten.save(second);
+
+		repoKitten.save(first);
 
 		System.out.println("Коты");
 		repoCat.findAll().forEach(System.out::println);
